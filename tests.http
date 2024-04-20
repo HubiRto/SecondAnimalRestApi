@@ -1,0 +1,33 @@
+﻿@host = http://localhost:5162
+@animalId = 1
+
+### Pobranie wszystkich zwierząt z opcjonalnym sortowaniem
+#GET {{host}}/api/animals
+GET {{host}}/api/animals?orderBy=name
+#GET {{host}}/api/animals?orderBy=category
+
+### Dodanie nowego zwierzęcia
+POST {{host}}/api/animals
+Content-Type: application/json
+
+{
+  "IdAnimal": 11,
+  "Name": "Giraffe",
+  "Description": "A tall African mammal with a very long neck",
+  "Category": "Mammals",
+  "Area": "Africa"
+}
+
+### Aktualizacja zwierzęcia o określonym ID
+PUT {{host}}/api/animals/{{animalId}}
+Content-Type: application/json
+
+{
+  "Name": "Updated Lion",
+  "Description": "An updated description of a large carnivorous feline mammal",
+  "Category": "Mammals",
+  "Area": "Africa"
+}
+
+### Usunięcie zwierzęcia o określonym ID
+DELETE {{host}}/api/animals/{{animalId}}

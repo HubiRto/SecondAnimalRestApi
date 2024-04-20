@@ -1,6 +1,6 @@
 ﻿CREATE TABLE Animal
 (
-    IdAnimal    int           NOT NULL,
+    IdAnimal    int           NOT NULL AUTO_INCREMENT,
     Name        nvarchar(200) NOT NULL,
     Description nvarchar(200) NULL,
     Category    nvarchar(200) NOT NULL,
